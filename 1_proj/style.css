@@ -1,0 +1,29 @@
+.text{
+    font-family: 'Montserrat',  sans-serif;
+    text-transform: uppercase;
+    font-size: 30px;
+    float: right;
+    -webkit-text-stroke: 1px #eee;
+    color : transparent;
+    letter-spacing: 5px;
+    position : relative;
+}
+.text::before{
+    content: attr(data-text);
+    position: absolute;
+    top : 0; left : 0;
+    color : #000000;
+    -webkit-text-stroke: 3px #020202;
+    width : 0;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px dashed #a9a8a7;
+    animation: text-fill 2s ease-in-out alternate infinite;
+}
+/*
+change width when your text is longer than the animation
+*/
+
+@keyframes text-fill {
+    100% {width : 100%}    
+}
